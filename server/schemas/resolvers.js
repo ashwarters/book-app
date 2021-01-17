@@ -11,7 +11,14 @@ const resolvers = {
             const user = await User.create(args);
             return await user;
         }
-    }
+    },
+
+    saveBooks: async(parent, { bookData }, context) => {
+        if (context.user) {
+            const updateUser = await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { savedBooks: bookData } }, { new: true })
+            return { updateUser };
+        }
+    },
 };
 
 module.exports = resolvers;
