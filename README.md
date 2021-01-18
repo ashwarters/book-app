@@ -1,4 +1,4 @@
-# BookSearch
+# BookApp
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-orange.svg)
 
